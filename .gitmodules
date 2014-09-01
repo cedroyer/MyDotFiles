@@ -1,0 +1,6 @@
+[submodule "dotFiles/.vim/bundle/ctrlp.vim"]
+	path = dotFiles/.vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "dotFiles/.vim/bundle/vim-fswitch"]
+	path = dotFiles/.vim/bundle/vim-fswitch
+	url = https://github.com/derekwyatt/vim-fswitch.git
