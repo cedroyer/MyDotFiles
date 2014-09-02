@@ -23,7 +23,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.d,*.o
 let g:ctrlp_cmd = 'CtrlPCurWD'
 
 "fswitch
-set runtimepath^=~/.vim/bundle/fswitch.vim
+set runtimepath^=~/.vim/bundle/vim-fswitch
 
 "myCpp
 set runtimepath^=~/.vim/bundle/myCpp.vim
