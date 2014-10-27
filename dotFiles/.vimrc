@@ -13,6 +13,8 @@ syntax on
 set wildmenu
 set wildmode=longest:full
 
+let s:vimConfigDir="~/.vim"
+
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=Inconsolata\ 12
@@ -20,6 +22,7 @@ if has("gui_running")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
     set guifont=Consolas:h10
+		let s:vimConfigDir="~\\vimfiles"
   endif
 endif
 
@@ -27,14 +30,16 @@ endif
 " Bundle
 ""
 
+let s:bundleDir = s:vimConfigDir."/bundle"
+
 "CtrlP
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+exec "set runtimepath^=".s:bundleDir."/ctrlp.vim"
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.d,*.o
 let g:ctrlp_cmd = 'CtrlPCurWD'
 
 "fswitch
-set runtimepath^=~/.vim/bundle/vim-fswitch
+exec "set runtimepath^=".s:bundleDir."/vim-fswitch"
 
 "myCpp
-set runtimepath^=~/.vim/bundle/myCpp.vim
+exec "set runtimepath^=".s:bundleDir."/myCpp.vim"
 
