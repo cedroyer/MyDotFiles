@@ -10,7 +10,6 @@ set path+=/home/homerider/dev/sihrdev/include
 
 " make options
 set autowriteall
-
 function! MakeGetterSetter() range
 	:$
 	:mark B
@@ -39,6 +38,14 @@ function! CreateEmptyClassDefinition(classname,namespace)
 	endif
 endfunction
 
+fun! ShowFuncName()
+  let lnum = line(".")
+  let col = col(".")
+  echohl ModeMsg
+	echo getline(search("^\\( \\{4}\\|\\t\\)\\?\\a\\S\\{-}\\( \\a\\S\\{-}\\)\\+\\s\\?(.*[^;]\\s\\{-}$", 'bW'))
+  echohl None
+  call search("\\%" . lnum . "l" . "\\%" . col . "c")
+endfun
 
 "command! -range SetGet <line1>,<line2>call MakeGetterSetter()
 
@@ -50,3 +57,4 @@ noremap <leader>gs _w :call MakeGetterSetter()<CR>
 noremap <leader>he :FSHere<CR>
 noremap <leader>hv :FSSplitLeft<CR>
 noremap <leader>hs :FSSplitBelow<CR>
+noremap <leader>f  :call ShowFuncName() <CR>
