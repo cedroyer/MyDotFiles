@@ -4,3 +4,6 @@
 [submodule "dotFiles/.vim/bundle/vim-fswitch"]
 	path = dotFiles/.vim/bundle/vim-fswitch
 	url = https://github.com/derekwyatt/vim-fswitch.git
+[submodule "dotFiles/liquidprompt"]
+	path = dotFiles/liquidprompt
+	url = https://github.com/nojhan/liquidprompt.git

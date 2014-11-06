@@ -1,3 +1,9 @@
+# source local if available
+if [ -r ~/.zshrc_local ]
+then
+	source ~/.zshrc_local
+fi
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' menu select=2
@@ -6,8 +12,7 @@ zstyle ':completion:*' max-errors 1
 zstyle :compinstall filename '/home/cedric/.zshrc'
 setopt completealiases
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -21,10 +26,16 @@ setopt numericglobsort
 
 
 # Prompt
-autoload -U promptinit
-promptinit
 
-prompt adam2 8bit
+if [ -z "$LIQUIDPROMPT_PATH" ]
+then
+	autoload -U promptinit && promptinit
+	prompt adam2 8bit
+else
+	autoload -U colors && colors
+	#LP_PS1_PREFIX="$fg[cyan][%T]$reset_color" ## FIXME Bug when use automatic completion in select mode
+	source "${LIQUIDPROMPT_PATH}/liquidprompt"
+fi
 
 # Key binding
 # create a zkbd compatible hash;
