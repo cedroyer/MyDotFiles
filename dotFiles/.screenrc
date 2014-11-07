@@ -1,3 +1,7 @@
+# let terminal manage scrolling
 termcapinfo linux ti@:te@
 termcapinfo xterm ti@:te@
 termcapinfo xterm-color ti@:te@
+
+# clean terminal after ncurse (like vim) application use
+altscreen on
