@@ -7,3 +7,6 @@
 [submodule "dotFiles/liquidprompt"]
 	path = dotFiles/liquidprompt
 	url = https://github.com/nojhan/liquidprompt.git
+[submodule "dotFiles/.vim/bundle/DoxygenToolkit.vim"]
+	path = dotFiles/.vim/bundle/DoxygenToolkit.vim
+	url = https://github.com/vim-scripts/DoxygenToolkit.vim.git

@@ -43,3 +43,5 @@ exec "set runtimepath^=".s:bundleDir."/vim-fswitch"
 "myCpp
 exec "set runtimepath^=".s:bundleDir."/myCpp.vim"
 
+"myCpp
+exec "set runtimepath^=".s:bundleDir."/DoxygenToolkit.vim"
