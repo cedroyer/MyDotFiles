@@ -1,3 +1,6 @@
 [submodule "dotFiles/liquidprompt"]
 	path = dotFiles/liquidprompt
 	url = https://github.com/nojhan/liquidprompt.git
+[submodule "dotFiles/.vim/bundle/Vundle"]
+	path = dotFiles/.vim/bundle/Vundle
+	url = https://github.com/gmarik/Vundle.vim.git

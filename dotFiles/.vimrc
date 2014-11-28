@@ -16,7 +16,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-exec "set rtp+=".s:bundleDir."Vundle.vim"
+exec "set rtp+=".s:bundleDir."/Vundle"
 call vundle#begin(s:bundleDir)
 
 " let Vundle manage Vundle, required
