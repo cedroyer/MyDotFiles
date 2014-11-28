@@ -1,5 +1,44 @@
-set nocompatible
+"""""""""""""""""""""""""""""""""""""
+" Variable Definition
+""
+let s:vimConfigDir="~/.vim"
 
+if has("gui_win32")
+		let s:vimConfigDir="~\\vimfiles"
+endif
+
+"""""""""""""""""""""""""""""""""""""
+" Bundle
+""
+let s:bundleDir = s:vimConfigDir."/bundle"
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+exec "set rtp+=".s:bundleDir."Vundle.vim"
+call vundle#begin(s:bundleDir)
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" switch between header and source (C++)
+Plugin 'derekwyatt/vim-fswitch'
+
+" fast file access
+Plugin 'kien/ctrlp.vim'
+
+" help doxygen comment writing
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+
+call vundle#end()
+
+" myCpp
+exec "set runtimepath^=".s:bundleDir."/myCpp.vim"
+
+"""""""""""""""""""""""""""""""""""""
+" Personal Configuration
+""
 filetype plugin indent on
 let mapleader=','
 set tabstop=2
@@ -13,8 +52,6 @@ syntax on
 set wildmenu
 set wildmode=longest:full
 
-let s:vimConfigDir="~/.vim"
-
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=Inconsolata\ 12
@@ -22,26 +59,10 @@ if has("gui_running")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
     set guifont=Consolas:h10
-		let s:vimConfigDir="~\\vimfiles"
   endif
 endif
 
-"""""""""""""""""""""""""""""""""""""
-" Bundle
-""
-
-let s:bundleDir = s:vimConfigDir."/bundle"
-
 "CtrlP
-exec "set runtimepath^=".s:bundleDir."/ctrlp.vim"
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.d,*.o
 let g:ctrlp_cmd = 'CtrlPCurWD'
 
-"fswitch
-exec "set runtimepath^=".s:bundleDir."/vim-fswitch"
-
-"myCpp
-exec "set runtimepath^=".s:bundleDir."/myCpp.vim"
-
-"myCpp
-exec "set runtimepath^=".s:bundleDir."/DoxygenToolkit.vim"

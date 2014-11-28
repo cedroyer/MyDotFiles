@@ -1,12 +1,3 @@
-[submodule "dotFiles/.vim/bundle/ctrlp.vim"]
-	path = dotFiles/.vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule "dotFiles/.vim/bundle/vim-fswitch"]
-	path = dotFiles/.vim/bundle/vim-fswitch
-	url = https://github.com/derekwyatt/vim-fswitch.git
 [submodule "dotFiles/liquidprompt"]
 	path = dotFiles/liquidprompt
 	url = https://github.com/nojhan/liquidprompt.git
-[submodule "dotFiles/.vim/bundle/DoxygenToolkit.vim"]
-	path = dotFiles/.vim/bundle/DoxygenToolkit.vim
-	url = https://github.com/vim-scripts/DoxygenToolkit.vim.git
