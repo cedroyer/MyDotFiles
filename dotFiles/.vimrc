@@ -31,10 +31,29 @@ Plugin 'kien/ctrlp.vim'
 " help doxygen comment writing
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 
+" keke tuning status bar
+Plugin 'bling/vim-airline'
+
+" plugin git for vim
+Plugin 'tpope/vim-fugitive'
+
+" Align code to a given char
+Plugin 'vim-scripts/Align'
+
 call vundle#end()
 
 " myCpp
 exec "set runtimepath^=".s:bundleDir."/myCpp.vim"
+
+"""""""""""""""""""""""""""""""""""""
+" Bundle Configuration
+""
+"CtrlP
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.d,*.o
+let g:ctrlp_cmd = 'CtrlPCurWD'
+
+"vim-airline
+set laststatus=2
 
 """""""""""""""""""""""""""""""""""""
 " Personal Configuration
@@ -61,8 +80,4 @@ if has("gui_running")
     set guifont=Consolas:h10
   endif
 endif
-
-"CtrlP
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.d,*.o
-let g:ctrlp_cmd = 'CtrlPCurWD'
 
