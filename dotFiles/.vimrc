@@ -20,7 +20,7 @@ exec "set rtp+=".s:bundleDir."/Vundle"
 call vundle#begin(s:bundleDir)
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim', {'name': 'Vundle'}
 
 " switch between header and source (C++)
 Plugin 'derekwyatt/vim-fswitch'
