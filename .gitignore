@@ -1,1 +1,4 @@
 .netrwhist
+dotFiles/.vim/bundle/vim-*
+dotFiles/.vim/bundle/*.vim
+dotFiles/.vim/bundle/Align
