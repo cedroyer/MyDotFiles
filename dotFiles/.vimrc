@@ -69,6 +69,8 @@ set ruler
 set showcmd
 syntax on
 
+colorscheme desert
+
 set wildmenu
 set wildmode=longest:full
 
@@ -80,5 +82,16 @@ if has("gui_running")
   elseif has("gui_win32")
     set guifont=Consolas:h10
   endif
+	" Zoom in/Zoom out functionality
+	nnoremap <C-Up> :silent! let &guifont = substitute(
+				\ &guifont,
+				\ ':h\zs\d\+',
+				\ '\=eval(submatch(0)+1)',
+				\ '')<CR>
+	nnoremap <C-Down> :silent! let &guifont = substitute(
+				\ &guifont,
+				\ ':h\zs\d\+',
+				\ '\=eval(submatch(0)-1)',
+				\ '')<CR>
 endif
 
