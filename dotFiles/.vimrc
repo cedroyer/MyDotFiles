@@ -1,11 +1,21 @@
 """""""""""""""""""""""""""""""""""""
 " Variable Definition
 ""
-let s:vimConfigDir="~/.vim"
-
-if has("gui_win32")
-		let s:vimConfigDir="~\\vimfiles"
+if $VIM_ROOT_PATH != ""
+	let s:vimRootDir=$VIM_ROOT_PATH
+else
+	let s:vimRootDir="~"
 endif
+
+if $VIM_CONFIG_DIR_PATH != ""
+	let s:vimConfigDir=$VIM_CONFIG_DIR_PATH
+elseif has("gui_win32")
+	let s:vimConfigDir=s:vimRootDir."\\vimfiles"
+else
+	let s:vimConfigDir=s:vimRootDir."/.vim"
+endif
+
+exec "set rtp+=".s:vimConfigDir
 
 """""""""""""""""""""""""""""""""""""
 " Bundle
