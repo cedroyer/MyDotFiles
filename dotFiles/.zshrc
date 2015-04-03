@@ -27,14 +27,18 @@ setopt numericglobsort
 
 # Prompt
 
-if [ -z "$LIQUIDPROMPT_PATH" ]
+if [ -n "$LIQUIDPROMPT_PATH" ]
 then
-	autoload -U promptinit && promptinit
-	prompt adam2 8bit
-else
 	autoload -U colors && colors
 	#LP_PS1_PREFIX="$fg[cyan][%T]$reset_color" ## FIXME Bug when use automatic completion in select mode
 	source "${LIQUIDPROMPT_PATH}/liquidprompt"
+elif where liquidprompt > /dev/null
+then
+	autoload -U colors && colors
+	source liquidprompt
+else
+	autoload -U promptinit && promptinit
+	prompt adam2 8bit
 fi
 
 # Key binding
