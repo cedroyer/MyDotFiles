@@ -95,12 +95,12 @@ if has("gui_running")
 	" Zoom in/Zoom out functionality
 	nnoremap <C-Up> :silent! let &guifont = substitute(
 				\ &guifont,
-				\ ':h\zs\d\+',
+				\ '\d\+$',
 				\ '\=eval(submatch(0)+1)',
 				\ '')<CR>
 	nnoremap <C-Down> :silent! let &guifont = substitute(
 				\ &guifont,
-				\ ':h\zs\d\+',
+				\ '\d\+$',
 				\ '\=eval(submatch(0)-1)',
 				\ '')<CR>
 endif
