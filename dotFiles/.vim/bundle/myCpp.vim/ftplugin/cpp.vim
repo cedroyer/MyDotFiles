@@ -6,7 +6,9 @@ let c_no_curly_error=1
 set foldmethod=syntax
 set foldlevel=2
 
-set path+=/home/homerider/dev/sihrdev/include
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 " make options
 set autowriteall

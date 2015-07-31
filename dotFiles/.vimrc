@@ -4,7 +4,7 @@
 if $VIM_ROOT_PATH != ""
 	let s:vimRootDir=$VIM_ROOT_PATH
 else
-	let s:vimRootDir="~"
+	let s:vimRootDir=$HOME
 endif
 
 if $VIM_CONFIG_DIR_PATH != ""
@@ -14,6 +14,14 @@ elseif has("gui_win32")
 else
 	let s:vimConfigDir=s:vimRootDir."/.vim"
 endif
+
+fu! s:SourceIfReadable(path)
+	if filereadable(a:path)
+		exec 'source '.a:path
+	endif
+endfu
+
+call s:SourceIfReadable(s:vimRootDir."/.vimrc_local")
 
 exec "set rtp+=".s:vimConfigDir
 
@@ -50,10 +58,13 @@ Plugin 'tpope/vim-fugitive'
 " Align code to a given char
 Plugin 'vim-scripts/Align'
 
+call s:SourceIfReadable(s:vimRootDir."/.vimrc_local_plugin")
+
 call vundle#end()
 
-" myCpp
+" my plugins
 exec "set runtimepath^=".s:bundleDir."/myCpp.vim"
+exec "set runtimepath^=".s:bundleDir."/myLua.vim"
 
 """""""""""""""""""""""""""""""""""""
 " Bundle Configuration
@@ -71,8 +82,8 @@ set t_Co=256 " color version
 ""
 filetype plugin indent on
 let mapleader=','
-set tabstop=2
-set shiftwidth=2
+"set tabstop=2
+"set shiftwidth=2
 set backspace=indent,eol,start
 set hlsearch
 set ruler

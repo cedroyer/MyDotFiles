@@ -3,3 +3,4 @@ dotFiles/.vim/bundle/vim-*
 dotFiles/.vim/bundle/*.vim
 dotFiles/.vim/bundle/Align
 dotFiles/.vim/bundle/.vundle
+dotFiles/.vim/bundle/gdbmgr
