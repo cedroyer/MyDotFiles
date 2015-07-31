@@ -5,3 +5,10 @@
 	st = status
 	s = status --short
 	l = log --oneline --decorate --graph
+	cob = checkout -b
+	ff = merge --ff-only
+	noff = merge --no-ff
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
