@@ -65,6 +65,7 @@ call vundle#end()
 " my plugins
 exec "set runtimepath^=".s:bundleDir."/myCpp.vim"
 exec "set runtimepath^=".s:bundleDir."/myLua.vim"
+exec "set runtimepath^=".s:bundleDir."/myPython.vim"
 
 """""""""""""""""""""""""""""""""""""
 " Bundle Configuration
@@ -94,6 +95,10 @@ colorscheme desert
 
 set wildmenu
 set wildmode=longest:full
+
+" Shortcuts
+nnoremap <Tab> :tabnext<CR>
+nnoremap <s-Tab> :tabprev<CR>
 
 if has("gui_running")
   if has("gui_gtk2")
