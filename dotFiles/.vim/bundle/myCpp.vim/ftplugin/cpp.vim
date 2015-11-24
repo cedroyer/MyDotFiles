@@ -1,7 +1,8 @@
 " C++ 11: support brace in parenthesis
 let c_no_curly_error=1
-:set cinoptions+=g0
-:set cinoptions+=N-s
+set cinoptions+=g0
+set cinoptions+=t0
+set cinoptions+=N-s
 
 set foldmethod=syntax
 set foldlevel=2

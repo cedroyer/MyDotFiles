@@ -58,6 +58,9 @@ Plugin 'tpope/vim-fugitive'
 " Align code to a given char
 Plugin 'vim-scripts/Align'
 
+" Solarized color scheme
+Plugin 'altercation/vim-colors-solarized'
+
 call s:SourceIfReadable(s:vimRootDir."/.vimrc_local_plugin")
 
 call vundle#end()
@@ -91,7 +94,6 @@ set ruler
 set showcmd
 syntax on
 
-colorscheme desert
 
 set wildmenu
 set wildmode=longest:full
@@ -101,23 +103,27 @@ nnoremap <Tab> :tabnext<CR>
 nnoremap <s-Tab> :tabprev<CR>
 
 if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Inconsolata\ 12
-  elseif has("gui_macvim")
-    set guifont=Menlo\ Regular:h14
-  elseif has("gui_win32")
-    set guifont=Consolas:h10
-  endif
-	" Zoom in/Zoom out functionality
-	nnoremap <C-Up> :silent! let &guifont = substitute(
-				\ &guifont,
-				\ '\d\+$',
-				\ '\=eval(submatch(0)+1)',
-				\ '')<CR>
-	nnoremap <C-Down> :silent! let &guifont = substitute(
-				\ &guifont,
-				\ '\d\+$',
-				\ '\=eval(submatch(0)-1)',
-				\ '')<CR>
+    "set background=light
+    if has("gui_gtk2")
+        set guifont=Inconsolata\ 12
+    elseif has("gui_macvim")
+        set guifont=Menlo\ Regular:h14
+    elseif has("gui_win32")
+        set guifont=Consolas:h10
+    endif
+    " Zoom in/Zoom out functionality
+    nnoremap <C-Up> :silent! let &guifont = substitute(
+                \ &guifont,
+                \ '\d\+$',
+                \ '\=eval(submatch(0)+1)',
+                \ '')<CR>
+    nnoremap <C-Down> :silent! let &guifont = substitute(
+                \ &guifont,
+                \ '\d\+$',
+                \ '\=eval(submatch(0)-1)',
+                \ '')<CR>
+else
+    "set background=dark
 endif
 
+colorscheme desert
