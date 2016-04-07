@@ -86,7 +86,7 @@ set t_Co=256 " color version
 ""
 filetype plugin indent on
 let mapleader=','
-"set tabstop=2
+set tabstop=4
 "set shiftwidth=2
 set backspace=indent,eol,start
 set hlsearch

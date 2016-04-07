@@ -2,6 +2,17 @@
 let c_no_curly_error=1
 set cino=g0,:0,l1,N-s,+0
 
+
+"function! MyAdditionalCppIndent()
+"	echo v:lnum .':'. cindent(v:lnum)
+"	if match(getline(v:lnum), 'template <.*>') != 1
+"		ret 0
+"	else
+"		ret cindent(v:lnum)
+"	endif
+"endfunction
+"setlocal indentexpr=MyAdditionalCppIndent()
+
 set foldmethod=syntax
 set foldlevel=2
 
