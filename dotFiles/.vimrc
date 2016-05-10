@@ -61,6 +61,9 @@ Plugin 'vim-scripts/Align'
 " Solarized color scheme
 Plugin 'altercation/vim-colors-solarized'
 
+" plantuml syntax
+Plugin 'aklt/plantuml-syntax'
+
 call s:SourceIfReadable(s:vimRootDir."/.vimrc_local_plugin")
 
 call vundle#end()
