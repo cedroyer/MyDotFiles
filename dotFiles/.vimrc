@@ -92,12 +92,14 @@ set t_Co=256 " color version
 filetype plugin indent on
 let mapleader=','
 set tabstop=4
-"set shiftwidth=2
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 set backspace=indent,eol,start
 set hlsearch
 set ruler
 set showcmd
-syntax on
+syntax enable
 
 
 set wildmenu

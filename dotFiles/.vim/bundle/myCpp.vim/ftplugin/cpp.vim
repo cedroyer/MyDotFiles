@@ -16,10 +16,6 @@ set cino=g0,:0,l1,N-s,+0
 set foldmethod=syntax
 set foldlevel=2
 
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-
 " make options
 set autowriteall
 function! MakeGetterSetter() range
