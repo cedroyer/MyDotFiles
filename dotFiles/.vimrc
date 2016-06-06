@@ -72,6 +72,8 @@ call vundle#end()
 exec "set runtimepath^=".s:bundleDir."/myCpp.vim"
 exec "set runtimepath^=".s:bundleDir."/myLua.vim"
 exec "set runtimepath^=".s:bundleDir."/myPython.vim"
+exec "set runtimepath^=".s:bundleDir."/mySql.vim"
+exec "set runtimepath^=".s:bundleDir."/myMake.vim"
 
 """""""""""""""""""""""""""""""""""""
 " Bundle Configuration
