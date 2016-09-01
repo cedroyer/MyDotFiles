@@ -64,6 +64,9 @@ Plugin 'altercation/vim-colors-solarized'
 " plantuml syntax
 Plugin 'aklt/plantuml-syntax'
 
+" rust syntax
+Plugin 'rust-lang/rust.vim'
+
 call s:SourceIfReadable(s:vimRootDir."/.vimrc_local_plugin")
 
 call vundle#end()
