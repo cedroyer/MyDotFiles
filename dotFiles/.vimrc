@@ -93,8 +93,9 @@ filetype plugin indent on
 let mapleader=','
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
+set softtabstop=0
 set expandtab
+set smarttab
 set backspace=indent,eol,start
 set hlsearch
 set ruler
