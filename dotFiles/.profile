@@ -1,0 +1,4 @@
+EDITOR=vim
+VISUAL=gvim
+
+export EDITOR VISUAL
