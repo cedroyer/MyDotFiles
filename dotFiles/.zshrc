@@ -23,6 +23,7 @@ SAVEHIST=100000
 # globbing option
 setopt extendedglob
 setopt numericglobsort
+setopt interactivecomments
 
 # alias
 alias ls='ls --color=auto'
