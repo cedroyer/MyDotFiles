@@ -1,4 +1,4 @@
 EDITOR=vim
-VISUAL=gvim
+VISUAL=(gvim --nofork)
 
 export EDITOR VISUAL
