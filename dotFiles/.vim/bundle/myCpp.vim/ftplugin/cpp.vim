@@ -30,19 +30,34 @@ function! MakeGetterSetter() range
 	:delmark B
 endfunction
 
-function! CreateEmptyClassDefinition(classname,namespace)
+function! CreateEmptyClassDefinition(...)
+    if a:0 == 0
+        let opts={}
+    elseif a:0 == 1
+        let opts=a:1
+    else
+        echo 'error bad number of agument must be 0 or 1(a dict with option)'
+        return
+    endif
+    if has_key(opts, 'classname')
+        let classname=opts['classname']
+    else
+        let classname=expand('%:t:r')
+    endif
 	:0
 	put='#pragma once'
 	put=''
-	if a:namespace != ''
-		put='namespace ' . a:namespace . ' {'
+	if has_key(opts, 'namespace')
+		put='namespace ' . opts['namespace'] . ' {'
 		put=''
 	endif
-	put='class ' . a:classname . ' {'
+	put='class ' . classname . ' {'
+	put='   ' . classname . '() {}'
+	put='   virtual ~' . classname . '() {}'
 	put='};'
-	if a:namespace != ''
+	if has_key(opts, 'namespace')
 		put=''
-		put='} // end namespace ' . a:namespace
+		put='} // end namespace ' . opts['namespace']
 	endif
 endfunction
 
