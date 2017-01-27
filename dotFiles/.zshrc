@@ -47,6 +47,10 @@ else
 	prompt adam2 8bit
 fi
 
+if [ -n "$SYNTAX_HIGHLIGHTING_PATH" ]
+then
+    source "$SYNTAX_HIGHLIGHTING_PATH/zsh-syntax-highlighting.zsh"
+fi
 # Key binding
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
