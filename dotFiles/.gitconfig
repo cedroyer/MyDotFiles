@@ -17,3 +17,5 @@
 	tool = vimdiff
 [core]
 	excludesFile = /home/cedric/.config/git/ignore
+[push]
+	default = simple
