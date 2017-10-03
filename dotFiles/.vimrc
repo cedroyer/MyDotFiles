@@ -44,7 +44,7 @@ Plugin 'gmarik/Vundle.vim', {'name': 'Vundle'}
 Plugin 'derekwyatt/vim-fswitch'
 
 " fast file access
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " help doxygen comment writing
 Plugin 'vim-scripts/DoxygenToolkit.vim'
@@ -81,10 +81,6 @@ exec "set runtimepath^=".s:bundleDir."/myMake.vim"
 """""""""""""""""""""""""""""""""""""
 " Bundle Configuration
 ""
-"CtrlP
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.d,*.o
-let g:ctrlp_cmd = 'CtrlPCurWD'
-
 "vim-airline
 set laststatus=2
 set t_Co=256 " color version
