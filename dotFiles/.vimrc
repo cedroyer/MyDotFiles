@@ -105,6 +105,7 @@ set ruler
 set showcmd
 syntax enable
 
+set wildignore+=*/tmp/*,*.swp
 
 set wildmenu
 set wildmode=longest:full
