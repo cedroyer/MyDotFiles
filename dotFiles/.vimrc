@@ -131,7 +131,7 @@ if has("gui_running")
                 \ '\=eval(submatch(0)-1)',
                 \ '')<CR>
 else
-    "set background=dark
+    set background=dark
 endif
 
-colorscheme desert
+"colorscheme desert
