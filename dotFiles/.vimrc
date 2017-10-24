@@ -65,6 +65,9 @@ Plugin 'aklt/plantuml-syntax'
 " rust syntax
 Plugin 'rust-lang/rust.vim'
 
+" flake8 python linter
+Plugin 'nvie/vim-flake8'
+
 call s:SourceIfReadable(s:vimRootDir."/.vimrc_local_plugin")
 
 call vundle#end()
