@@ -21,8 +21,6 @@ fu! s:SourceIfReadable(path)
 	endif
 endfu
 
-call s:SourceIfReadable(s:vimRootDir."/.vimrc_local")
-
 exec "set rtp+=".s:vimConfigDir
 
 """""""""""""""""""""""""""""""""""""
@@ -133,5 +131,7 @@ if has("gui_running")
 else
     set background=dark
 endif
+
+call s:SourceIfReadable(s:vimRootDir."/.vimrc_local")
 
 "colorscheme desert
