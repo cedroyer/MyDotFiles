@@ -11,6 +11,8 @@
 	ff = merge --ff-only
 	noff = merge --no-ff
     cl = clone --recursive -b dev
+	fep = fetch --prune
+	dic = diff HEAD~1..HEAD
 [diff]
 	tool = vimdiff
 [merge]
