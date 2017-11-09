@@ -111,9 +111,18 @@ set wildignore+=*/tmp/*,*.swp
 set wildmenu
 set wildmode=longest:full
 
+fun! ToggleMouse()
+    if &mouse == "a"
+        set mouse=
+    else
+        set mouse=a
+    endif
+endfun
+
 " Shortcuts
 nnoremap <Tab> :tabnext<CR>
 nnoremap <s-Tab> :tabprev<CR>
+nnoremap <leader>m :call ToggleMouse()<CR>
 
 if has("gui_running")
     "set background=light
