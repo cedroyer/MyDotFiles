@@ -68,6 +68,9 @@ Plugin 'rust-lang/rust.vim'
 " flake8 python linter
 Plugin 'nvie/vim-flake8'
 
+" git patcher
+Plugin 'airblade/vim-gitgutter'
+
 call s:SourceIfReadable(s:vimRootDir."/.vimrc_local_plugin")
 
 call vundle#end()
@@ -100,6 +103,7 @@ set backspace=indent,eol,start
 set hlsearch
 set ruler
 set showcmd
+set updatetime=250
 syntax enable
 
 set wildignore+=*/tmp/*,*.swp
