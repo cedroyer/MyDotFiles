@@ -13,6 +13,7 @@ if !exists("no_plugin_maps") && !exists("no_mail_maps")
     nnoremap <buffer> <leader>ga :exec "grep --include '*.py' -R '" . expand('<cword>') . "' ."<CR>
     nnoremap <buffer> <leader>gg :grep --include '*.py' -R  .<LEFT><LEFT>
     nnoremap <buffer> <leader>ct :call PythonPrintCallingTree()<CR>
+    nnoremap <buffer> <leader>ds :call PythonGenerateDocString('.')<CR>
 endif
 
 "au BufWrite * exec ":%s/\s\+$//"

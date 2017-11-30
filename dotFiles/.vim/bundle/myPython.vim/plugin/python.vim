@@ -34,3 +34,29 @@ fun! PythonPrintCallingTree()
         echo printf('%4d: %s', l, getline(l))
     endfor
 endfun
+
+let s:python_def_regex = '^\s*def \([^(]\+\)(\([^)]*\)):'
+
+fun! PythonGenerateDocString(def_line)
+    let m = matchlist(getline(a:def_line), s:python_def_regex)
+    if ! empty(m)
+        let fun_name = m[1]
+        let args = split(m[2], '\s*,\s*')
+        let def_indent = indent(a:def_line)
+        let single_indent = repeat(' ', &tabstop)
+        let doc_indent = repeat(' ', (def_indent + &tabstop))
+        exec ':' . a:def_line
+        put = doc_indent.'\"\"\"'
+        if ! empty(args)
+            put = ''
+            put = doc_indent.'Args:'
+            for arg in args
+                put = doc_indent . single_indent . arg . ':'
+            endfor
+        endif
+        put=doc_indent.'\"\"\"'
+        return 1
+    endif
+    return 0
+endfun
+
