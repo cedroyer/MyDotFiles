@@ -8,3 +8,4 @@ dotFiles/.vim/bundle/DoxygenToolkit.vim/
 dotFiles/.vim/bundle/Vundle.vim/
 dotFiles/.vim/bundle/ctrlp.vim/
 dotFiles/.vim/bundle/rust.vim/
+dotFiles/.vim/bundle/nvim-completion-manager/
