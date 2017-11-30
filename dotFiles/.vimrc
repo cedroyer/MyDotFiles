@@ -68,6 +68,9 @@ Plugin 'rust-lang/rust.vim'
 " flake8 python linter
 Plugin 'nvie/vim-flake8'
 
+" python auto-complete
+Plugin 'roxma/nvim-completion-manager'
+
 " git patcher
 Plugin 'airblade/vim-gitgutter'
 
