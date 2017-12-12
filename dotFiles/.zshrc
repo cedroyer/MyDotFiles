@@ -55,7 +55,7 @@ fi
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 
-bindkey -e
+bindkey -v
 typeset -A key
 
 key[Home]=${terminfo[khome]}
@@ -84,6 +84,9 @@ key[PageDown]=${terminfo[knp]}
 
 # suppr key
 bindkey "e[3~" delete-char
+
+bindkey '^R' history-incremental-search-backward
+
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
