@@ -47,16 +47,28 @@ fun! PythonGenerateDocString(def_line)
         let doc_indent = repeat(' ', (def_indent + &tabstop))
         exec ':' . a:def_line
         put = doc_indent.'\"\"\"'
+        let first_ = 1
         if ! empty(args)
-            put = ''
-            put = doc_indent.'Args:'
             for arg in args
-                put = doc_indent . single_indent . arg . ':'
+                if arg != 'self' && arg != 'cls'
+                    if first_
+                        let first_ = 0
+                        put = ''
+                        put = doc_indent.'Args:'
+                    endif
+                    put = doc_indent . single_indent . split(arg, '\s*=\s*')[0] . ' ():'
+                endif
             endfor
+            put = ''
         endif
+        put = doc_indent.'Returns:'
         put=doc_indent.'\"\"\"'
         return 1
     endif
     return 0
 endfun
+
+if !exists("no_plugin_maps") && !exists("no_mail_maps")
+    nnoremap <buffer> <leader>pgg :grep --include '*.py' -R  .<LEFT><LEFT>
+endif
 
