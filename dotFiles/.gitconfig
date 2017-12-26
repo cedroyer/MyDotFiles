@@ -21,3 +21,5 @@
 	excludesFile = /home/cedric/.config/git/ignore
 [push]
 	default = simple
+[mergetool "vimdiff"]
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
