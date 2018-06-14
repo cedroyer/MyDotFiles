@@ -13,6 +13,7 @@ if !exists("no_plugin_maps") && !exists("no_mail_maps")
     nnoremap <buffer> <leader>gg :grep --include '*.py' -R  .<LEFT><LEFT>
     nnoremap <buffer> <leader>ct :call PythonPrintCallingTree()<CR>
     nnoremap <buffer> <leader>ds :call PythonGenerateDocString('.')<CR>
+    nnoremap <buffer> <leader>st :put = 'import pdb;pdb.set_trace()'<CR>
 endif
 
 "au BufWrite * exec ":%s/\s\+$//"
