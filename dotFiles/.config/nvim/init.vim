@@ -4,15 +4,13 @@
 if $VIM_ROOT_PATH != ""
 	let s:vimRootDir=$VIM_ROOT_PATH
 else
-	let s:vimRootDir=$HOME
+	let s:vimRootDir=$HOME."/.config/nvim"
 endif
 
 if $VIM_CONFIG_DIR_PATH != ""
 	let s:vimConfigDir=$VIM_CONFIG_DIR_PATH
-elseif has("gui_win32")
-	let s:vimConfigDir=s:vimRootDir."\\vimfiles"
 else
-	let s:vimConfigDir=s:vimRootDir."/.vim"
+	let s:vimConfigDir=s:vimRootDir
 endif
 
 fu! s:SourceIfReadable(path)
@@ -26,14 +24,11 @@ exec "set rtp+=".s:vimConfigDir
 """""""""""""""""""""""""""""""""""""
 " Bundle
 ""
-let s:bundleDir = s:vimConfigDir."/bundle"
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-exec "set rtp+=".s:bundleDir."/Vundle"
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 " switch between header and source (C++)
 Plug 'derekwyatt/vim-fswitch'
@@ -94,7 +89,7 @@ Plug 'ncm2/ncm2-vim'
 " git patcher
 Plug 'airblade/vim-gitgutter'
 
-call s:SourceIfReadable(s:vimRootDir."/.vimrc_local_plugin")
+call s:SourceIfReadable(s:vimRootDir."/.plugin_local.vim")
 
 call plug#end()
 
@@ -173,7 +168,7 @@ else
     set background=dark
 endif
 
-call s:SourceIfReadable(s:vimRootDir."/.vimrc_local")
+call s:SourceIfReadable(s:vimRootDir."/init_local.vim")
 
 "colorscheme desert
 
