@@ -3,7 +3,7 @@ set wildignore+=*.pyc
 fun! PythonGoToDefinition()
     let cur_word = expand('<cword>')
     split
-    silent exec 'grep -R --include "*.py" "\s*\(\(def\\|class\)\s*' . cur_word . '\s*(\\|' . cur_word . ' = \)" .'
+    silent exec 'grep -R --include "*.py" "\(\(def\\|class\)\s*' . cur_word . '\s*(\\|\(^\\|\s\)' . cur_word . ' = \)" .'
     redraw!
 endfun
 

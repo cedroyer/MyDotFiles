@@ -68,8 +68,31 @@ Plugin 'rust-lang/rust.vim'
 " flake8 python linter
 Plugin 'nvie/vim-flake8'
 
+" Python go plugin
+Plugin 'fatih/vim-go'
+
+" python import sorter isort
+Plugin 'stsewd/isort.nvim'
+
+" neomake generic linter
+Plugin 'neomake/neomake'
+
+" Linter python
+Plugin 'ambv/black'
+
 " python auto-complete
-Plugin 'roxma/nvim-completion-manager'
+Plugin 'roxma/nvim-yarp'
+Plugin 'ncm2/ncm2'
+
+" autocomplete
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANTE: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+Plugin 'ncm2/ncm2-bufword'
+Plugin 'ncm2/ncm2-path'
+Plugin 'ncm2/ncm2-jedi'
+Plugin 'ncm2/ncm2-vim'
 
 " git patcher
 Plugin 'airblade/vim-gitgutter'
@@ -154,3 +177,6 @@ endif
 call s:SourceIfReadable(s:vimRootDir."/.vimrc_local")
 
 "colorscheme desert
+
+" lint auto python
+autocmd BufWritePre *.py execute ':Black'

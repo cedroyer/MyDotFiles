@@ -3,8 +3,8 @@ if exists("b:did_ftplugin")
 endif
 let b:did_ftplugin = 1
 
-setlocal foldmethod=syntax
-setlocal foldlevel=2
+setlocal foldmethod=indent
+setlocal foldlevel=99
 setlocal colorcolumn=121
 
 if !exists("no_plugin_maps") && !exists("no_mail_maps")
@@ -14,6 +14,9 @@ if !exists("no_plugin_maps") && !exists("no_mail_maps")
     nnoremap <buffer> <leader>ct :call PythonPrintCallingTree()<CR>
     nnoremap <buffer> <leader>ds :call PythonGenerateDocString('.')<CR>
     nnoremap <buffer> <leader>st :put = 'import pdb;pdb.set_trace()'<CR>
+    nnoremap <space> za " Enable folding with the spacebar
+    noremap <buffer> <leader>tp :s/"\(\w*\)": /\1=/<CR>
+    noremap <buffer> <leader>td :s/\(\w*\)=/"\1": /<CR>
 endif
 
 "au BufWrite * exec ":%s/\s\+$//"
