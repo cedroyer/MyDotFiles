@@ -102,11 +102,12 @@ call s:SourceIfReadable(s:vimRootDir."/.vimrc_local_plugin")
 call vundle#end()
 
 " my plugins
-exec "set runtimepath^=".s:bundleDir."/myCpp.vim"
-exec "set runtimepath^=".s:bundleDir."/myLua.vim"
-exec "set runtimepath^=".s:bundleDir."/myPython.vim"
-exec "set runtimepath^=".s:bundleDir."/mySql.vim"
-exec "set runtimepath^=".s:bundleDir."/myMake.vim"
+let s:myBundleDir = s:vimConfigDir."/my_bundle"
+exec "set runtimepath^=".s:myBundleDir."/myCpp.vim"
+exec "set runtimepath^=".s:myBundleDir."/myLua.vim"
+exec "set runtimepath^=".s:myBundleDir."/myPython.vim"
+exec "set runtimepath^=".s:myBundleDir."/mySql.vim"
+exec "set runtimepath^=".s:myBundleDir."/myMake.vim"
 
 """""""""""""""""""""""""""""""""""""
 " Bundle Configuration
