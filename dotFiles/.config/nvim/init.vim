@@ -13,6 +13,12 @@ else
 	let s:vimConfigDir=s:vimRootDir
 endif
 
+if $VIM_SHARED_DIR_PATH != ""
+	let s:vimSharedDir=$VIM_SHARED_DIR_PATH
+else
+	let s:vimSharedDir=$HOME."/.local/share/nvim/"
+endif
+
 fu! s:SourceIfReadable(path)
 	if filereadable(a:path)
 		exec 'source '.a:path
@@ -30,14 +36,10 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 call plug#begin()
 
-" switch between header and source (C++)
-Plug 'derekwyatt/vim-fswitch'
+" Global plugins
 
 " fast file access
 Plug 'ctrlpvim/ctrlp.vim'
-
-" help doxygen comment writing
-Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " keke tuning status bar
 Plug 'bling/vim-airline'
@@ -46,48 +48,56 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 
 " Align code to a given char
-Plug 'vim-scripts/Align'
-
-" Solarized color scheme
-Plug 'altercation/vim-colors-solarized'
-
-" plantuml syntax
-Plug 'aklt/plantuml-syntax'
-
-" rust syntax
-Plug 'rust-lang/rust.vim'
-
-" flake8 python linter
-Plug 'nvie/vim-flake8'
-
-" Python go plugin
-Plug 'fatih/vim-go'
-
-" python import sorter isort
-Plug 'stsewd/isort.nvim'
-
-" neomake generic linter
-Plug 'neomake/neomake'
-
-" Linter python
-Plug 'ambv/black'
-
-" python auto-complete
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2'
-
-" autocomplete
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" IMPORTANTE: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-vim'
+Plug 'vim-scripts/Align', {'on': 'Align'}
 
 " git patcher
 Plug 'airblade/vim-gitgutter'
+
+" neomake generic linter
+"Plug 'neomake/neomake'
+
+" Solarized color scheme
+"Plug 'altercation/vim-colors-solarized'
+
+" Specific plugins
+
+" switch between header and source (C++)
+Plug 'derekwyatt/vim-fswitch', {'for': ['cpp', 'c']}
+
+" help doxygen comment writing
+Plug 'vim-scripts/DoxygenToolkit.vim', {'for': 'cpp'}
+
+" plantuml syntax
+Plug 'aklt/plantuml-syntax', {'for': 'plantuml'}
+
+" rust syntax
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+
+" flake8 python linter
+Plug 'nvie/vim-flake8', {'for': 'python'}
+
+" Python go plugin
+Plug 'fatih/vim-go', {'for': 'go'}
+
+" python import sorter isort
+Plug 'stsewd/isort.nvim', {'for': 'python'}
+
+
+" Linter python
+Plug 'ambv/black', {'for': 'python'}
+
+" auto complete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
+
+Plug 'zchee/deoplete-clang', {'for': ['cpp', 'c']}
+Plug 'zchee/deoplete-jedi', {'for': 'python'}
+Plug 'zchee/deoplete-go', {'for': 'go'}
+Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
+
+let s:pythonSharedDir = s:vimSharedDir."/python"
+let g:python_host_prog = s:pythonSharedDir."/env2/bin/python"
+let g:python3_host_prog = s:pythonSharedDir."/env3/bin/python"
 
 call s:SourceIfReadable(s:vimRootDir."/.plugin_local.vim")
 
