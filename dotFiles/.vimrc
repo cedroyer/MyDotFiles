@@ -33,73 +33,71 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 exec "set rtp+=".s:bundleDir."/Vundle"
-call vundle#begin(s:bundleDir)
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim', {'name': 'Vundle'}
+call plug#begin('~/.vim/plugged')
 
 " switch between header and source (C++)
-Plugin 'derekwyatt/vim-fswitch'
+Plug 'derekwyatt/vim-fswitch'
 
 " fast file access
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " help doxygen comment writing
-Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " keke tuning status bar
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
 
 " plugin git for vim
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " Align code to a given char
-Plugin 'vim-scripts/Align'
+Plug 'vim-scripts/Align'
 
 " Solarized color scheme
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 " plantuml syntax
-Plugin 'aklt/plantuml-syntax'
+Plug 'aklt/plantuml-syntax'
 
 " rust syntax
-Plugin 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'
 
 " flake8 python linter
-Plugin 'nvie/vim-flake8'
+Plug 'nvie/vim-flake8'
 
 " Python go plugin
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go'
 
 " python import sorter isort
-Plugin 'stsewd/isort.nvim'
+Plug 'stsewd/isort.nvim'
 
 " neomake generic linter
-Plugin 'neomake/neomake'
+Plug 'neomake/neomake'
 
 " Linter python
-Plugin 'ambv/black'
+Plug 'ambv/black'
 
 " python auto-complete
-Plugin 'roxma/nvim-yarp'
-Plugin 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2'
 
 " autocomplete
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " IMPORTANTE: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
-Plugin 'ncm2/ncm2-bufword'
-Plugin 'ncm2/ncm2-path'
-Plugin 'ncm2/ncm2-jedi'
-Plugin 'ncm2/ncm2-vim'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-jedi'
+Plug 'ncm2/ncm2-vim'
 
 " git patcher
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 call s:SourceIfReadable(s:vimRootDir."/.vimrc_local_plugin")
 
-call vundle#end()
+call plug#end()
+
 
 " my plugins
 let s:myBundleDir = s:vimConfigDir."/my_bundle"

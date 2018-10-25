@@ -1,11 +1,3 @@
 .netrwhist
-dotFiles/.vim/bundle/vim-*
-dotFiles/.vim/bundle/Align
-dotFiles/.vim/bundle/.vundle
-dotFiles/.vim/bundle/gdbmgr
-dotFiles/.vim/bundle/plantuml-syntax/
-dotFiles/.vim/bundle/DoxygenToolkit.vim/
-dotFiles/.vim/bundle/Vundle.vim/
-dotFiles/.vim/bundle/ctrlp.vim/
-dotFiles/.vim/bundle/rust.vim/
-dotFiles/.vim/bundle/nvim-completion-manager/
+dotFiles/.vim/black/
+dotFiles/.vim/plugged/
