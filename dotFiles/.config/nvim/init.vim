@@ -111,6 +111,7 @@ exec "set runtimepath^=".s:myBundleDir."/myLua.vim"
 exec "set runtimepath^=".s:myBundleDir."/myPython.vim"
 exec "set runtimepath^=".s:myBundleDir."/mySql.vim"
 exec "set runtimepath^=".s:myBundleDir."/myMake.vim"
+exec "set runtimepath^=".s:myBundleDir."/myYaml.vim"
 
 """""""""""""""""""""""""""""""""""""
 " Bundle Configuration
