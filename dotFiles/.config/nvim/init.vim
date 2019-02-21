@@ -70,7 +70,7 @@ Plug 'vim-scripts/DoxygenToolkit.vim', {'for': 'cpp'}
 " plantuml syntax
 Plug 'aklt/plantuml-syntax', {'for': 'plantuml'}
 
-" rust syntax
+" rust pulgin
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 
 " flake8 python linter
@@ -81,7 +81,6 @@ Plug 'fatih/vim-go', {'for': 'go'}
 
 " python import sorter isort
 Plug 'stsewd/isort.nvim', {'for': 'python'}
-
 
 " Linter python
 Plug 'ambv/black', {'for': 'python'}
@@ -98,6 +97,7 @@ Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
 let s:pythonSharedDir = s:vimSharedDir."/python"
 let g:python_host_prog = s:pythonSharedDir."/env2/bin/python"
 let g:python3_host_prog = s:pythonSharedDir."/env3/bin/python"
+let $PATH = s:pythonSharedDir . "/env3/bin:" . $PATH
 
 call s:SourceIfReadable(s:vimRootDir."/.plugin_local.vim")
 
@@ -182,5 +182,12 @@ call s:SourceIfReadable(s:vimRootDir."/init_local.vim")
 
 "colorscheme desert
 
+" lint rust
+let g:rustfmt_autosave = 1
+
 " lint auto python
 autocmd BufWritePre *.py execute ':Black'
+
+" local nvim configuration
+set secure
+set exrc
