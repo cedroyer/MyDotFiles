@@ -13,6 +13,7 @@
     cl = clone --recursive -b dev
 	fep = fetch --prune
 	dic = diff HEAD~1..HEAD
+	pushf = push --force-with-lease
 [diff]
 	tool = vimdiff
 [merge]
