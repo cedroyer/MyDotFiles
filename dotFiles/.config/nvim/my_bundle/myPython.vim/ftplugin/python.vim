@@ -4,7 +4,7 @@ endif
 let b:did_ftplugin = 1
 
 setlocal foldmethod=indent
-setlocal foldlevel=99
+setlocal foldlevel=88
 setlocal colorcolumn=121
 
 if !exists("no_plugin_maps") && !exists("no_mail_maps")

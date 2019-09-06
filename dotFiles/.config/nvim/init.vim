@@ -26,6 +26,7 @@ fu! s:SourceIfReadable(path)
 endfu
 
 exec "set rtp+=".s:vimConfigDir
+let mapleader=','
 
 """""""""""""""""""""""""""""""""""""
 " Bundle
@@ -54,7 +55,7 @@ Plug 'vim-scripts/Align', {'on': 'Align'}
 Plug 'airblade/vim-gitgutter'
 
 " neomake generic linter
-"Plug 'neomake/neomake'
+Plug 'vim-syntastic/syntastic'
 
 " Solarized color scheme
 "Plug 'altercation/vim-colors-solarized'
@@ -84,6 +85,9 @@ Plug 'stsewd/isort.nvim', {'for': 'python'}
 
 " Linter python
 Plug 'ambv/black', {'for': 'python'}
+
+" deep learning auto complete
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 " auto complete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -124,7 +128,6 @@ set t_Co=256 " color version
 " Personal Configuration
 ""
 filetype plugin indent on
-let mapleader=','
 set tabstop=4
 set shiftwidth=4
 set softtabstop=0
@@ -189,6 +192,14 @@ let g:rustfmt_autosave = 1
 " lint auto python
 autocmd BufWritePre *.py execute ':Black'
 
+" NerdTree like netrw config
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+
 " local nvim configuration
 set secure
 set exrc
+set nomodeline
