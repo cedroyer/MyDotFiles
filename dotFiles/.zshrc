@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/lumapps/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -68,7 +68,12 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions vi-mode)
+plugins=(
+	git
+	vi-mode
+	zsh-syntax-highlighting
+	zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,7 +91,14 @@ then
 	source "$local_config_file"
 fi
 
-# User configuration
+my_dot_files_dir=${MY_DOT_FILES_DIR:-"$HOME/.config/MyDotFiles/"}
+if [ -d "$my_dot_files_dir" ] && [ -x "$my_dot_files_dir" ]
+then
+	(
+		cd "$my_dot_files_dir"
+		git status --short
+	)
+fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
