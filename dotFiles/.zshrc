@@ -73,6 +73,8 @@ plugins=(
 	vi-mode
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+	kube-ps1
+	kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
