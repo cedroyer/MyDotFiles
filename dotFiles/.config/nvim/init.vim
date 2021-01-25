@@ -26,6 +26,7 @@ call plug#end()
 " disable autocompletion, because we use deoplete for completion
 let g:jedi#completions_enabled = 0
 let g:deoplete#enable_at_startup = 1
+let g:omni_sql_no_default_maps = 1
 
 " open the go-to function in split, not another buffer
 " let g:jedi#use_splits_not_buffers = "right"
