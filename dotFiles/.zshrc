@@ -75,6 +75,7 @@ plugins=(
 	zsh-autosuggestions
 	kube-ps1
 	kubectl
+	colorize
 )
 
 source $ZSH/oh-my-zsh.sh
