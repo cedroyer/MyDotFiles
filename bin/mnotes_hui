@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+dir=~/Nextcloud/Notes/Journalières/$(date '+%Y-%m')
+filename=$(date '+%Y-%m-%d').txt
+filepath="$dir/$filename"
+
+
+
+mkdir -p "$dir"
+
+if [ ! -r "$filepath" ]; then
+  cat <<EOF > "$filepath"
+# Note journalière du $(date '+%Y-%m-%d')
+
+## À faire
+
+1. item
+
+## Expression libre 
+
+EOF
+fi
+
+"$EDITOR" "$filepath"
