@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 
-dir=~/Nextcloud/Notes/Journalières/$(date '+%Y-%m')
+config_path="$HOME/.config/mnotesrc"
+
+if [ -r "$config_path" ]
+then
+  source "$config_path"
+fi
+
+dir=${NEXTCLOUD_DIR:-~/Nextcloud}/Notes/Journalières/$(date '+%Y-%m')
 filename=$(date '+%Y-%m-%d').txt
 filepath="$dir/$filename"
 
@@ -15,9 +22,6 @@ if [ ! -r "$filepath" ]; then
 ## À faire
 
 1. item
-
-## Expression libre 
-
 EOF
 fi
 
