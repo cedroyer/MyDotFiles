@@ -1,0 +1,9 @@
+pylint
+mypy
+black
+isort
+pynvim
+jedi
+psycopg2-binary
+flask
+sqlalchemy
