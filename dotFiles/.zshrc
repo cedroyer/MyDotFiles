@@ -80,6 +80,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# avoid big lag when pasting (see https://github.com/zsh-users/zsh-syntax-highlighting/issues/295#issuecomment-214581607)
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
+
 function nvim() {
 	(source ~/.local/share/python-venvs/vim-venv/bin/activate && /usr/bin/nvim "$@")
 }
