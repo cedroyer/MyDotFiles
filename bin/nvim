@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+source ~/.local/share/python-venvs/vim-venv/bin/activate
+/usr/bin/nvim "$@"
