@@ -88,7 +88,7 @@ export EDITOR=/usr/bin/nvim
 
 export PATH="$HOME/bin:$PATH"
 
-local_config_file="$HOME/.config/local/.zshrc"
+local_config_file="$HOME/.zshrc_local"
 if [ -r "$local_config_file" ]
 then
 	source "$local_config_file"
