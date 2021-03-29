@@ -7,3 +7,5 @@ jedi
 psycopg2-binary
 flask
 sqlalchemy
+pyenchant
+marshmallow_dataclass
