@@ -1,11 +1,21 @@
+# test
+pytest
+
+# lint
 pylint
 mypy
+pyenchant
+marshmallow_dataclass
+
+# format
 black
 isort
+
+# IDE integration
 pynvim
 jedi
+
+# current libraries in LumApps
 psycopg2-binary
 flask
 sqlalchemy
-pyenchant
-marshmallow_dataclass
