@@ -1,3 +1,8 @@
+if [ -z "$TMUX" ] && which tmux &> /dev/null && [ "$(tmux -V | sed 's/tmux \([0-9]\{1,\}\).*/\1/')" -ge 3 ]
+then
+  exec tmux
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
