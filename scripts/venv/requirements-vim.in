@@ -14,8 +14,9 @@ isort
 # IDE integration
 pynvim
 jedi
+pycscope
 
 # current libraries in LumApps
 psycopg2-binary
-flask
+flask-restx
 sqlalchemy
